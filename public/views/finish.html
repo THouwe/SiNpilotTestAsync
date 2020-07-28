@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>AC_experiment</title>
+
+    <script src="../../js/jspsych.js"></script>
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/ACexp_jsPsych_plugins/jspsych-html-keyboard-response.js"></script>
+
+    <link href="../css/jspsych.css" rel="stylesheet" type="text/css"></link>
+
+  </head>
+  <body></body>
+  <script>
+
+  timeline = [];
+  // create finish screen
+  var end_exp = {
+    data: {screen_id: "end_experiment"},
+    type: 'html-keyboard-response',
+    stimulus: "<p>Your data has been saved. You can now close this screen.</p>",
+    choices: jsPsych.NO_KEYS
+  };
+  // var myclosescreen = document.createElement("div");
+  // myclosescreen.innerHTML = "<p>Your data has been saved.</p>" +
+  //       "<p>You can now close this screen.</p>";
+  //       myclosescreen.className = "debrief";
+  //       document.body.appendChild(myclosescreen);
+  timeline.push(end_exp);
+
+  jsPsych.init({
+    timeline: timeline
+  })
+
+  </script>
+</html>
